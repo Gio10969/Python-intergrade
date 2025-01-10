@@ -1,49 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-#  <div class="alert alert-block alert-danger">
-# <b>Comentario del revisor:</b> <a class="tocSkip"></a>
-# 
-# Hola, Giovani! Ya casi tienes el ejercicio, solamente en la gráfica que te recomiendo de scatter plots para ver la relación entre las score de usuarios y de los criticos respecto a las ventas. En el eje de las Y se colocan las ventas globales  
-# 
-# </div> 
-# 
-# </div>
-
-# ¡Hola!
-# 
-# Mi nombre es Tonatiuh Cruz. Me complace revisar tu proyecto hoy.
-# 
-# Al identificar cualquier error inicialmente, simplemente los destacaré. Te animo a localizar y abordar los problemas de forma independiente como parte de tu preparación para un rol como data-scientist. En un entorno profesional, tu líder de equipo seguiría un enfoque similar. Si encuentras la tarea desafiante, proporcionaré una pista más específica en la próxima iteración.
-# 
-# Encontrarás mis comentarios a continuación - **por favor no los muevas, modifiques o elimines**.
-# 
-# Puedes encontrar mis comentarios en cajas verdes, amarillas o rojas como esta:
-# 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Éxito. Todo está hecho correctamente.
-# </div>
-# 
-# <div class="alert alert-block alert-warning">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Observaciones. Algunas recomendaciones.
-# </div>
-# 
-# <div class="alert alert-block alert-danger">
-# <b>Comentario del revisor</b> <a class="tocSkip"></a>
-# 
-# Necesita corrección. El bloque requiere algunas correcciones. El trabajo no puede ser aceptado con comentarios en rojo.
-# </div>
-# 
-# Puedes responderme utilizando esto:
-# 
-# <div class="alert alert-block alert-info">
-# <b>Respuesta del estudiante.</b> <a class="tocSkip"></a>
-# </div>
-
 # # Datos de juegos.
 # ## Importar datos y corregir valores de las columnas. 
 
@@ -125,25 +79,6 @@ games_data['total_sales'] = games_data[['na_sales', 'eu_sales', 'jp_sales', 'oth
 
 # Mostrar una vista previa de los datos procesados
 display(games_data.head(10))
-
-
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor:</b> <a class="tocSkip"></a>
-#     
-# Hola, Giovani! Muy buen trabajo en la sección, ajustaste los nombres de las columnas a minúsculas con el uso de la función str.lower(), cambiaste el tipo de variable de dos de las variables de la base de datos, consideraste ajustar los valores ausentes de las variables identificadas de score y muy buen trabajo con la suma de todas las ventas. 
-#     
-#    
-# 
-# </div>
-
-# <div class="alert alert-block alert-warning">
-# <b>Comentario del revisor:</b> <a class="tocSkip"></a>
-#     
-# 
-#     
-# Solamente te recomiendo que en estas columnas de 'critic_score'  mejor los completes con 'Unknown', puede ser en una columna duplicada para que puedas desarrollar los análisis posteriores. Además, te sugiero verificar si en el resto de las columnas no cuentas con datos ausentes que se deban ajustar.     
-# 
-# </div>
 
 # In[8]:
 
@@ -335,20 +270,6 @@ plt.show()
 
 # Esta gráfica de dispersión muestra la relación entre las puntuaciones de usuarios y críticos en los ejes x e y respectivamente, mientras que el tamaño de los puntos está determinado por las ventas globales. Esto nos permite visualizar si hay alguna correlación entre las puntuaciones y las ventas globales de los juegos.
 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor:</b> <a class="tocSkip"></a>
-# 
-# Muy buen trabajo con el análisis exploratorio de los datos. Desarrollaste gráficas de box-plots para analizar ventas de las plataformas que más venden, gráficas para identificar los juegos más populares en las distintas plataformas, gráficas de barras para analizar los géneros de juegos más populares y agregaste la conclusión y la interpretación de cada uno de estos resultados.   
-# 
-# </div>
-
-#  <div class="alert alert-block alert-danger">
-# <b>Comentario del revisor:</b> <a class="tocSkip"></a>
-# 
-# Solamente te recomiendo desarrollar una gráfica de scatter plots para ver la relación entre las score de usuarios y de los criticos respecto a las ventas. En este sentido en el eje de las X tendrías los score de usuarios y de los criticos y en el de las Y las ventas globales  
-# 
-# </div>
-
 # ## Ventas por genero
 # Basándonos en las ventas totales por género, podemos observar que los géneros más rentables son:
 # 
@@ -428,13 +349,6 @@ print(region_esrb_sales.loc['JP'])
 # M (Mature): 64.24 millones de unidades vendidas
 # Estas observaciones destacan las diferencias en las preferencias de los consumidores y las tendencias del mercado en cada región, lo que puede ser útil para estrategias de marketing y desarrollo de productos específicos para cada mercado.
 
-# <div class="alert alert-block alert-success">
-# <b>Comentario del revisor:</b> <a class="tocSkip"></a>
-# 
-# Excelente! Con este análisis por región ayuda a complementar el análisis general anterior y a hacer zoom a los resultados por cada una de las regiones.   Solamente te recomiendo en esta sección también agregar gráficas que ayuden a visualizar los resultados.
-# 
-# </div>
-
 # ## Hipotesis
 
 # In[18]:
@@ -467,16 +381,6 @@ if p_value < alpha:
 else:
     print("No hay suficiente evidencia para rechazar la hipótesis nula.")
 
-
-#  <div class="alert alert-block alert-warning">
-# <b>Comentario revisor</b> <a class="tocSkip"></a>
-# 
-# Para estra pruebas te recomiendo hacer una prueba de  Levene  para mostrar si las varianzas son iguales y agregarlo dentro de la función. Actualmente lo colocar como equal_var=False. Para esto, primero debes calcular las varianzas para cada uno de las plataformas y en un segundo tiempo debes de hacer uso de la siguiente función: 
-#     
-#     levene(xbox_one_data['user_score'], pc_data['user_score'])
-#     
-# Adoptaremos un nivel de significancia de 0.05; si el valor p resultante es mayor a 0.05, no podemos rechazar la hipótesis nula, y si es menor a 0.05, rechazamos la hipótesis nula, indicando que las varianzas no son iguales.    
-# </div>
 
 # ### Hipótesis 1:
 # Hipótesis nula (H0): Las calificaciones promedio de los usuarios para las plataformas Xbox One y PC son iguales.
@@ -511,16 +415,3 @@ else:
 # Sin embargo, no hubo suficiente evidencia para afirmar diferencias significativas en las calificaciones promedio de los usuarios entre los géneros de Acción y Deportes.
 # 
 # En conjunto, estos hallazgos proporcionan información valiosa sobre las tendencias del mercado de videojuegos, las preferencias de los consumidores y las relaciones entre diferentes variables en la industria de los videojuegos. Estas conclusiones pueden ser útiles para tomar decisiones estratégicas en la planificación de lanzamientos de productos, campañas de marketing y desarrollo de juegos.
-
-# <div class="alert alert-block alert-warning">
-# <b>Comentario revisor</b> <a class="tocSkip"></a>
-# 
-# En general creo que hiciste un muy buen trabajo con el proyecto, pudiste limpiar y trabajar las bases de datos de beuna manera. Además, el análisis explorario de datos fue completo al mostrar resultados relevantes que pueden ser de mucha utilidad para la toma de decisiones y desarrollaste las pruebas de hipótesis de una buena manera. No obstante, recuerda que siempre podemos mejorar y te menciono algunos puntos que debes considerar:
-# 
-# 
-# 
-# *  Considerar eliminar registros atipicos que puedan sesgar nuestros resultados. 
-#     
-# *  Considerar desarrollar un análisis para comprobar los supuestos de la prueba de hipótesis (varianzas iguales)
-#     
-# </div>
